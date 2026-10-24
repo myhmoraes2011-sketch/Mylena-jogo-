@@ -1,259 +1,75 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>Simulador de Vida - Mobile RP</title>
-  <style>
-    body { margin: 0; overflow: hidden; font-family: Arial, sans-serif; user-select: none; background: #000; touch-action: none; }
-    
-    #hud {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background: rgba(0, 0, 0, 0.75);
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 10px;
-      font-size: 12px;
-      z-index: 10;
-    }
-    .stat-val { color: #4ade80; font-weight: bold; }
+# 🎬 Super Sistema Mestre: Gerador de Animação Infantil de Longa Retenção (YouTube Kids & Streaming)
 
-    /* Controles Virtuais para Celular */
-    #mobile-controls {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      display: grid;
-      grid-template-columns: repeat(3, 50px);
-      grid-template-rows: repeat(3, 50px);
-      gap: 5px;
-      z-index: 10;
-    }
-    .dpad-btn {
-      background: rgba(255, 255, 255, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      border-radius: 8px;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .dpad-btn:active { background: rgba(255, 255, 255, 0.6); }
+> **Versão:** 4.0.0 (Enterprise Full Script Engine)  
+> **Escopo:** Geração de episódios inéditos e completos de 20 minutos focados na faixa etária de 1 a 10 anos.  
+> **Compatibilidade:** ChatGPT (GPT-4o), Claude 3.5 Sonnet, Gemini 1.5 Pro.
 
-    #action-panel {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 10;
-    }
-    .btn {
-      background: #2563eb;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
+---
 
-    #toast {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #22c55e;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      font-size: 12px;
-      opacity: 0;
-      transition: opacity 0.3s;
-      z-index: 20;
-    }
-  </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-</head>
-<body>
+## 🏗️ 1. Arquitetura do Sistema de Execução em Bloco
 
-  <div id="hud">
-    <div id="location-name" style="font-weight:bold; color:#38bdf8; margin-bottom:5px;">Curitiba</div>
-    <div>Dinheiro: <span class="stat-val" id="money">R$ 5.000</span></div>
-    <div>Status: <span id="status">A pé</span></div>
-  </div>
+O código e o prompt abaixo contêm a estrutura completa e exaustiva para impedir que a Inteligência Artificial resuma qualquer parte do episódio. Copie todo o conteúdo delimitado no bloco de texto mais abaixo.
 
-  <!-- D-Pad para Celular -->
-  <div id="mobile-controls">
-    <div></div><div class="dpad-btn" id="btn-up">▲</div><div></div>
-    <div class="dpad-btn" id="btn-left">◀</div><div></div><div class="dpad-btn" id="btn-right">▶</div>
-    <div></div><div class="dpad-btn" id="btn-down">▼</div><div></div>
-  </div>
+```json
+{
+  "system_config": {
+    "engine": "Animation Script Generator v4",
+    "target_demographic": "1-10 years",
+    "dual_layer_retention": true,
+    "plagiarism_protection": "strict_zero_cliche",
+    "output_length": "maximum_token_capacity"
+  }
+}Atue obrigatoriamente como um Diretor Executivo de Animação 3D, Showrunner sênior e Especialista em Engenharia de Algoritmos e Retenção do YouTube Kids e plataformas de streaming infantil.
 
-  <div id="action-panel">
-    <button class="btn" onclick="interact()">🚪 Entrar / Interagir</button>
-  </div>
+Sua missão absoluta é gerar o ROTEIRO COMPLETO, INTEGRAL E EXAUSTIVO, linha por linha, sem abreviações, resumos ou pulos, de um Episódio Piloto de 20 Minutos de uma animação 3D (estilo Pixar/Disney Jr) 100% inédita e original. É proibido usar clichês ou cópias de desenhos já existentes.
 
-  <div id="toast">Notificação</div>
+Para capturar e reter a atenção da faixa etária ampla de 1 a 10 anos, aplique rigorosamente a "TÉCNICA DE RETENÇÃO DUAL":
+- CAMADA 1 (1 a 4 anos): Cores primárias vibrantes, ritmo dinâmico, expressões faciais exageradas, sound design cômico e elementos musicais repetitivos.
+- CAMADA 2 (5 a 10 anos): Humor inteligente em camadas, mistérios intrigantes, ganchos de curiosidade contínuos, resolução lógica de problemas e senso de conquista.
 
-  <script>
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x87ceeb);
+DESENVOLVA O PROJETO INTEIRO SEGUINDO ESTAS 6 SEÇÕES TÉCNICAS COMPLETAS:
 
-    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.shadowMap.enabled = true;
-    document.body.appendChild(renderer.domElement);
+=== SEÇÃO 1: BÍBLIA DE PERSONAGENS & UNIVERSO CRIATIVO ===
+1. Nome da Série e Título Completo do Episódio (Otimizado para SEO e buscas do YouTube Kids).
+2. Protagonista Principal: Nome, espécie, design visual detalhado (texturas, cores primárias, acessório icônico inconfundível), traço de personalidade único e bordão marcante.
+3. Co-protagonista / Alívio Cômico: Nome, contraste de personalidade e mecânica exata de humor físico.
+4. O Mundo / Cenário: Descrição rica do ambiente 3D onde a história se passa.
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-    scene.add(ambientLight);
+=== SEÇÃO 2: ROTEIRO INTEGRAL DE 20 MINUTOS (FALAS E AÇÕES DETALHADAS) ===
+Escreva todas as falas, ações, marcações de tempo e interações, divididas exatamente em 4 Atos de 5 minutos cada, sem omitir NENHUMA cena:
 
-    const sun = new THREE.DirectionalLight(0xffffff, 0.8);
-    sun.position.set(50, 100, 50);
-    sun.castShadow = true;
-    scene.add(sun);
+- ATO 1 (00:00 - 05:00) | O GANCHO INSTANTÂNEO:
+  * Início imediato nos primeiros 3 segundos (sem vinheta longa).
+  * Apresentação detalhada do "Problema/Mistério do Dia".
+  * [Insira marcadores de SFX e Efeitos Visuais cena por cena].
 
-    // Chão
-    const groundGeo = new THREE.PlaneGeometry(1000, 3000);
-    const groundMat = new THREE.MeshLambertMaterial({ color: 0x16a34a });
-    const ground = new THREE.Mesh(groundGeo, groundMat);
-    ground.rotation.x = -Math.PI / 2;
-    ground.receiveShadow = true;
-    scene.add(ground);
+- ATO 2 (05:00 - 10:00) | A JORNADA INTERATIVA:
+  * 2 Obstáculos progressivos e crescentes.
+  * Quebra da 4ª Parede: O personagem olha diretamente para a câmera, faz uma pergunta interativa à criança e aguarda 3 segundos (pausa dramática explicada no roteiro).
 
-    // Estrada
-    const roadGeo = new THREE.PlaneGeometry(20, 3000);
-    const roadMat = new THREE.MeshLambertMaterial({ color: 0x334155 });
-    const road = new THREE.Mesh(roadGeo, roadMat);
-    road.rotation.x = -Math.PI / 2;
-    road.position.y = 0.01;
-    scene.add(road);
+- ATO 3 (10:00 - 15:00) | O CLÍMAX E O RISO:
+  * A grande confusão onde tudo parece dar errado de forma cômica.
+  * Trabalho em equipe e raciocínio lógico simples para superar o obstáculo final.
 
-    // --- CONSTRUÇÃO DO AVATAR ---
-    const playerGroup = new THREE.Group();
-    // Cabeça
-    const headGeo = new THREE.SphereGeometry(0.4, 16, 16);
-    const headMat = new THREE.MeshLambertMaterial({ color: 0xffdbac });
-    const head = new THREE.Mesh(headGeo, headMat);
-    head.position.y = 1.6;
-    playerGroup.add(head);
-    // Corpo
-    const bodyGeo = new THREE.BoxGeometry(0.8, 1, 0.4);
-    const bodyMat = new THREE.MeshLambertMaterial({ color: 0x2563eb });
-    const body = new THREE.Mesh(bodyGeo, bodyMat);
-    body.position.y = 0.9;
-    playerGroup.add(body);
+- ATO 4 (15:00 - 20:00) | A VITÓRIA & MÚSICA CHICLETE:
+  * Resolução e lição sutil.
+  * Criação da Letra Completa da Música Original ("Earworm Song") com marcações de ritmo, refrão chiclete e coreografia fácil para as crianças imitarem em casa.
 
-    playerGroup.position.set(3, 0, 0);
-    scene.add(playerGroup);
+=== SEÇÃO 3: MAPA DE SOUND DESIGN E EFEITOS SONOROS ===
+Forneça a lista completa de efeitos sonoros obrigatórios aplicados ao longo de todo o episódio (Ex: Pop, Boing, Woosh, Risadas, Alertas suaves, Aplausos).
 
-    // --- CONSTRUÇÃO DO VEÍCULO ---
-    const carGroup = new THREE.Group();
-    const carBodyGeo = new THREE.BoxGeometry(2.2, 1, 4);
-    const carBodyMat = new THREE.MeshLambertMaterial({ color: 0xdc2626 });
-    const carBody = new THREE.Mesh(carBodyGeo, carBodyMat);
-    carBody.position.y = 0.6;
-    carGroup.add(carBody);
+=== SEÇÃO 4: PROMPTS TÉCNICOS PARA IA DE VÍDEO E IMAGEM ===
+Gere 5 prompts avançados em inglês (otimizados para Midjourney, Runway, Luma Dream Machine e Sora) detalhando iluminação cinematográfica estilo Pixar, texturas e enquadramentos de câmera.
 
-    // Rodas
-    const wheelGeo = new THREE.CylinderGeometry(0.3, 0.3, 0.2, 16);
-    const wheelMat = new THREE.MeshBasicMaterial({ color: 0x000000 });
-    for (let x of [-1.1, 1.1]) {
-      for (let z of [-1.2, 1.2]) {
-        const w = new THREE.Mesh(wheelGeo, wheelMat);
-        w.rotation.z = Math.PI / 2;
-        w.position.set(x, 0.3, z);
-        carGroup.add(w);
-      }
-    }
-    carGroup.position.set(-4, 0, 5);
-    scene.add(carGroup);
+=== SEÇÃO 5: ESTRATÉGIA DE MARKETING E ALGORITMO ===
+1. 3 Conceitos detalhados de Capas (Thumbnails) de altíssimo CTR (Cores contrastantes, expressões faciais extremas, textos grandes).
+2. Títulos alternativos otimizados para o algoritmo.
 
-    // --- CASA COM INTERIOR COM ENTRADA ---
-    const houseGroup = new THREE.Group();
-    // Paredes
-    const wallMat = new THREE.MeshLambertMaterial({ color: 0xf3f4f6 });
-    const backWall = new THREE.Mesh(new THREE.BoxGeometry(8, 4, 0.2), wallMat);
-    backWall.position.set(0, 2, -4);
-    houseGroup.add(backWall);
+=== SEÇÃO 6: CHECKLIST DE QUALIDADE DO PROJETO ===
+Valide se o roteiro cumpre os critérios de segurança para crianças, ritmo acelerado a cada 4 segundos de corte visual e engajamento contínuo.
 
-    const leftWall = new THREE.Mesh(new THREE.BoxGeometry(0.2, 4, 8), wallMat);
-    leftWall.position.set(-4, 2, 0);
-    houseGroup.add(leftWall);
-
-    const rightWall = new THREE.Mesh(new THREE.BoxGeometry(0.2, 4, 8), wallMat);
-    rightWall.position.set(4, 2, 0);
-    houseGroup.add(rightWall);
-
-    houseGroup.position.set(12, 0, -10);
-    scene.add(houseGroup);
-
-    // ESTADO E CONTROLES
-    let inCar = false;
-    let moveForward = false, moveBackward = false, turnLeft = false, turnRight = false;
-
-    // Mapeamento dos botões virtuais
-    const bindBtn = (id, setter) => {
-      const el = document.getElementById(id);
-      el.addEventListener('touchstart', (e) => { e.preventDefault(); setter(true); });
-      el.addEventListener('touchend', (e) => { e.preventDefault(); setter(false); });
-    };
-
-    bindBtn('btn-up', val => moveForward = val);
-    bindBtn('btn-down', val => moveBackward = val);
-    bindBtn('btn-left', val => turnLeft = val);
-    bindBtn('btn-right', val => turnRight = val);
-
-    function interact() {
-      const distCar = playerGroup.position.distanceTo(carGroup.position);
-      if (distCar < 4) {
-        inCar = !inCar;
-        playerGroup.visible = !inCar;
-        document.getElementById('status').innerText = inCar ? 'Dirigindo' : 'A pé';
-        showToast(inCar ? "Entrou no carro" : "Saiu do carro");
-      }
-    }
-
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      toast.innerText = msg;
-      toast.style.opacity = 1;
-      setTimeout(() => toast.style.opacity = 0, 2500);
-    }
-
-    function animate() {
-      requestAnimationFrame(animate);
-
-      if (!inCar) {
-        if (moveForward) playerGroup.translateZ(-0.15);
-        if (moveBackward) playerGroup.translateZ(0.15);
-        if (turnLeft) playerGroup.rotation.y += 0.04;
-        if (turnRight) playerGroup.rotation.y -= 0.04;
-
-        camera.position.set(playerGroup.position.x, playerGroup.position.y + 4, playerGroup.position.z + 8);
-        camera.lookAt(playerGroup.position);
-      } else {
-        if (moveForward) carGroup.translateZ(-0.3);
-        if (moveBackward) carGroup.translateZ(0.1);
-        if (turnLeft) carGroup.rotation.y += 0.03;
-        if (turnRight) carGroup.rotation.y -= 0.03;
-
-        playerGroup.position.copy(carGroup.position);
-
-        camera.position.set(carGroup.position.x, carGroup.position.y + 5, carGroup.position.z + 10);
-        camera.lookAt(carGroup.position);
-      }
-
-      renderer.render(scene, camera);
-    }
-
-    animate();
-  </script>
-</body>
-</html>
+Instrução Crítica: Escreva o roteiro inteiro sem usar resumos, do minuto 00:00 ao 20:00. Se a resposta atingir o limite da IA, aguarde o comando de continuação.{
+  "status": "ready_for_deployment",
+  "repository": "Mylena-jogo-",
+  "version": "4.0.0"
+}
